@@ -1,5 +1,5 @@
-#ifndef _SCHONORR_IDNIKS
-#define _SCHONORRL_IDNIKS
+#ifndef _ELGAMAL_IDNIKS
+#define _ELGAMAL_IDNIKS
 
 #include <mcl/bn256.hpp>
 #include <openssl/sha.h>
@@ -39,10 +39,10 @@ namespace IDNIKS
     struct Signature
     {
         G1 S;
-        Fr e;
+        G2 R;
 
         Signature() = default;
-        Signature(const G1 S, const Fr e);
+        Signature(const G1 S, const G2 R);
     };
 
     class KGC
