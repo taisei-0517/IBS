@@ -1,0 +1,6 @@
+g++ -std=c++11 -I../include -I/opt/homebrew/include -L/opt/homebrew/lib -L../lib -lmcl -lcrypto -lgmp -lgmpxx -lutil -framework CoreFoundation -w -c idniks-schnorr-kgc.cpp
+g++ -std=c++11 -I../include -I/opt/homebrew/include -L/opt/homebrew/lib -L../lib -lmcl -lcrypto -lgmp -lgmpxx -lutil -framework CoreFoundation -w -c idniks-schnorr-test.cpp
+g++ -std=c++11 -I../include -I/opt/homebrew/include -L/opt/homebrew/lib -L../lib -lmcl -lcrypto -lgmp -lgmpxx -lutil -framework CoreFoundation -w -c idniks-schnorr-user.cpp
+g++ -std=c++11 -I../include -I/opt/homebrew/include -L/opt/homebrew/lib -L../lib -lmcl -lcrypto -lgmp -lgmpxx -lutil -framework CoreFoundation -w -c idniks-schnorr.cpp
+g++ -std=c++11 -I../include -I/opt/homebrew/include -L/opt/homebrew/lib -L../lib -lmcl -lcrypto -lgmp -lgmpxx -lutil -framework CoreFoundation -w -c mpz_util.cpp
+g++ -std=c++11 -I../include -I/opt/homebrew/include -L/opt/homebrew/lib -L../lib -lmcl -lcrypto -lgmp -lgmpxx -lutil -framework CoreFoundation -w -o idniks-schnorr idniks-schnorr-kgc.o idniks-schnorr-test.o idniks-schnorr-user.o idniks-schnorr.o mpz_util.o

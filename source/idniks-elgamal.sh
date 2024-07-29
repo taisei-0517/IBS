@@ -1,0 +1,6 @@
+g++ -std=c++11 -I../include -I/opt/homebrew/include -L/opt/homebrew/lib -L../lib -lmcl -lcrypto -lgmp -lgmpxx -lutil -framework CoreFoundation -w -c idniks-elgamal-kgc.cpp
+g++ -std=c++11 -I../include -I/opt/homebrew/include -L/opt/homebrew/lib -L../lib -lmcl -lcrypto -lgmp -lgmpxx -lutil -framework CoreFoundation -w -c idniks-elgamal-test.cpp
+g++ -std=c++11 -I../include -I/opt/homebrew/include -L/opt/homebrew/lib -L../lib -lmcl -lcrypto -lgmp -lgmpxx -lutil -framework CoreFoundation -w -c idniks-elgamal-user.cpp
+g++ -std=c++11 -I../include -I/opt/homebrew/include -L/opt/homebrew/lib -L../lib -lmcl -lcrypto -lgmp -lgmpxx -lutil -framework CoreFoundation -w -c idniks-elgamal.cpp
+g++ -std=c++11 -I../include -I/opt/homebrew/include -L/opt/homebrew/lib -L../lib -lmcl -lcrypto -lgmp -lgmpxx -lutil -framework CoreFoundation -w -c mpz_util.cpp
+g++ -std=c++11 -I../include -I/opt/homebrew/include -L/opt/homebrew/lib -L../lib -lmcl -lcrypto -lgmp -lgmpxx -lutil -framework CoreFoundation -w -o idniks-elgamal idniks-elgamal-kgc.o idniks-elgamal-test.o idniks-elgamal-user.o idniks-elgamal.o mpz_util.o

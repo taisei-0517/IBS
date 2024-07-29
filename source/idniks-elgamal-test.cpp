@@ -31,7 +31,7 @@ int main()
     // bool valid = user.verification(message, userId_fake, params, sign);
     bool valid = user.verification(message, userId, params, sign);
 
-    if (valid)
+    if (valid == 0)
     {
         printf("Signature is valid.\n");
     }
