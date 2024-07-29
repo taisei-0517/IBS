@@ -55,12 +55,11 @@ namespace IDNIKS
         G2::mul(QK, this->params.Q, k_fp);
         pairing(r, Pu, QK);
 
-        std::vector<unsigned char> k_m(r.getStr().begin(), r.getStr().end());
         std::vector<unsigned char> msg_m = msg;
-        msg_m.insert(msg_m.end(), k_m.begin(), k_m.end());
+        msg_m.insert(msg_m.end(), r.getStr().begin(), r.getStr().end());
         std::vector<unsigned char> e_hash(SHA256_DIGEST_LENGTH, 0);
         SHA256_Init(&sha256);
-        SHA256_Update(&sha256, msg.data(), msg_m.size());
+        SHA256_Update(&sha256, msg_m.data(), msg_m.size());
         SHA256_Final(e_hash.data(), &sha256);
         mpz_class e_mpz;
         mpzUtil::bytesToMpz(e_mpz, e_hash);
@@ -99,17 +98,16 @@ namespace IDNIKS
         Fp12 w;
         Fp12::mul(w, SQ_fp12, ePu_fp12);
 
-        std::vector<unsigned char> w_s(w.getStr().begin(), w.getStr().end());
         std::vector<unsigned char> msg_s = msg;
-        msg_s.insert(msg_s.end(), w_s.begin(), w_s.end());
+        msg_s.insert(msg_s.end(), w.getStr().begin(), w.getStr().end());
         std::vector<unsigned char> e_hash(SHA256_DIGEST_LENGTH, 0);
         SHA256_Init(&sha256);
-        SHA256_Update(&sha256, msg.data(), msg.size());
+        SHA256_Update(&sha256, msg_s.data(), msg_s.size());
         SHA256_Final(e_hash.data(), &sha256);
-        mpz_class e_mpz;
-        mpzUtil::bytesToMpz(e_mpz, e_hash);
-        e_mpz %= mod;
-        Fr verify_e(e_mpz.get_str());
+        mpz_class e_mpz_s;
+        mpzUtil::bytesToMpz(e_mpz_s, e_hash);
+        e_mpz_s %= mod;
+        Fr verify_e(e_mpz_s.get_str());
 
         if (sign.e == verify_e)
         {
