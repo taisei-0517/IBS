@@ -12,7 +12,7 @@ int main()
     std::cout << "P: " << params.P << std::endl;
     std::cout << "Q: " << params.Q << std::endl;
     std::cout << "lQ: " << params.lQ << std::endl;
-    std::string userId = "uki.uki.taisei@ezweb.ne.jp";
+    std::string userId = "hogehoge@hoge.ne.jp";
     UserKey userKey = kgc.genUserKey(userId);
     User user(userId, params, userKey);
     std::string str = "Hello, World!";
