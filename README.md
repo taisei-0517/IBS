@@ -1,18 +1,9 @@
 # IBS
 IBS(IDbased-signature)のプログラム
 
-IDNIKS-Elgamal,IDNIKS- ,BF方式,BB1方式のプログラムがあります.
+IDNIKS-Elgamal,IDNIKS-schnorrの署名プログラムがあります
 
-g++ -std=c++11 -I../include -I/opt/homebrew/include -L/opt/homebrew/lib -L../lib -lmcl -lcrypto -lgmp -lgmpxx -framework CoreFoundation -w -o idniks-elgamal idniks-elgamal.cpp
+「楕円曲線上のペアリングに基づく2,3の暗号方式(その2)」 境隆一　笠原正雄
+https://ipsj.ixsq.nii.ac.jp/ej/index.php?action=pages_view_main&active_action=repository_action_common_download&item_id=45140&item_no=1&attribute_id=1&file_no=1&page_id=13&block_id=8
+を参考にしました
 
-g++ -std=c++11 -I../include -I/opt/homebrew/include -L/opt/homebrew/lib -L../lib -lmcl -lcrypto -lgmp -lgmpxx -framework CoreFoundation -w -c idniks-schnorr-kgc.cpp
-
-g++ -std=c++11 -I../include -I/opt/homebrew/include -L/opt/homebrew/lib -L../lib -lmcl -lcrypto -lgmp -lgmpxx -framework CoreFoundation -w -c idniks-schnorr.cpp
-
-g++ -std=c++11 -I../include -I/opt/homebrew/include -L/opt/homebrew/lib -L../lib -lmcl -lcrypto -lgmp -lgmpxx -framework CoreFoundation -w -c idniks-schnorr-user.cpp
-
-g++ -std=c++11 -I../include -I/opt/homebrew/include -L/opt/homebrew/lib -L../lib -lmcl -lcrypto -lgmp -lgmpxx -framework CoreFoundation -w -c idniks-schnorr-test.cpp 
-
-g++ -std=c++11 -I../include -I/opt/homebrew/include -L/opt/homebrew/lib -L../lib -lmcl -lcrypto -lgmp -lgmpxx -framework CoreFoundation -w -c mpz_util_in.cpp
-
-g++ -std=c++11 -I../include -I/opt/homebrew/include -L/opt/homebrew/lib -L../lib -lmcl -lcrypto -lgmp -lgmpxx -framework CoreFoundation -w -o a idniks-schnorr-test.o idniks-schnorr-1.o idniks-schnorr-kgc.o idniks-schnorr-user.o mpz_util.o
