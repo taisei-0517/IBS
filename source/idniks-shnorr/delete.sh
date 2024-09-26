@@ -1,0 +1,1 @@
+rm idniks-schnorr idniks-schnorr-kgc.o idniks-schnorr-test.o idniks-schnorr-user.o idniks-schnorr.o mpz_util.o

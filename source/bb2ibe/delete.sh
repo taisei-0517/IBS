@@ -1,0 +1,1 @@
+rm bb2_kgc.o bb2_test.o bb2_user.o bb2.o mpz_util.o

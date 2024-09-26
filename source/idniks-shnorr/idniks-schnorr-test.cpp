@@ -18,8 +18,10 @@ int main()
     std::string str = "Hello, World!";
     std::vector<unsigned char> message(str.begin(), str.end());
     Signature sign = user.signature(message);
+    std::cout << "S: " << sign.S << std::endl;
+    std::cout << "e: " << sign.e << std::endl;
     std::string userId_fake = "user2";
-    
+
     bool valid = user.verification(message, userId, params, sign);
 
     if (valid == 0)

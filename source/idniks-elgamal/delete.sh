@@ -1,0 +1,1 @@
+rm idniks-elgamal idniks-elgamal-kgc.o idniks-elgamal-test.o idniks-elgamal-user.o idniks-elgamal.o mpz_util.o

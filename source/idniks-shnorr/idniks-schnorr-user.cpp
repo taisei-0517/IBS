@@ -68,7 +68,8 @@ namespace IDNIKS
         mpz_class e_mpz;
         mpzUtil::bytesToMpz(e_mpz, e_hash);
         e_mpz %= mod;
-        Fr e(e_mpz.get_str());
+        Fr e;
+        e.setStr(e_mpz.get_str());
 
         G1 eKu;
         G1::mul(eKu, this->decKey.Ku, e);
